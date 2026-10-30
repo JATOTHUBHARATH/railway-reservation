@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookings | Railway Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="brand">🚆 Railway Reservation</span>
+    <div class="links">
+      <a href="trains.html">Trains</a>
+      <a href="passengers.html">Passengers</a>
+      <a href="book.html">Book</a>
+      <a href="bookings.html" class="active">Bookings</a>
+      <a href="report.html">Report</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Bookings</h1>
+
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Passenger</th><th>Train</th><th>Route</th>
+            <th>Date</th><th>Seats</th><th>Total (₹)</th><th>Status</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="bookingBody">
+          <tr><td colspan="9" class="muted">Loading...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/bookings.js"></script>
+</body>
+</html>

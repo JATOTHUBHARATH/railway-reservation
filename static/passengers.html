@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passengers | Railway Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="brand">🚆 Railway Reservation</span>
+    <div class="links">
+      <a href="trains.html">Trains</a>
+      <a href="passengers.html" class="active">Passengers</a>
+      <a href="book.html">Book</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="report.html">Report</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Passengers</h1>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="search" type="text" placeholder="Search by name...">
+        <button id="addToggle" class="btn">+ Add passenger</button>
+      </div>
+
+      <form id="addForm" class="grid-form hidden">
+        <input name="passenger_id" type="number" placeholder="Passenger ID" required min="1">
+        <input name="passenger_name" type="text" placeholder="Name" required>
+        <input name="age" type="number" placeholder="Age" required min="1">
+        <select name="gender" required>
+          <option value="">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+        </select>
+        <input name="phone" type="text" placeholder="Phone (10 digits)" required
+               pattern="[0-9]{10}" maxlength="10" title="Exactly 10 digits">
+        <button type="submit" class="btn primary">Save passenger</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Phone</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="passengerBody">
+          <tr><td colspan="6" class="muted">Loading...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/passengers.js"></script>
+</body>
+</html>

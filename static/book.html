@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Ticket | Railway Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="brand">🚆 Railway Reservation</span>
+    <div class="links">
+      <a href="trains.html">Trains</a>
+      <a href="passengers.html">Passengers</a>
+      <a href="book.html" class="active">Book</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="report.html">Report</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Book a Ticket</h1>
+
+    <section class="card">
+      <form id="bookForm" class="stack-form">
+        <label>Passenger
+          <select name="passenger_id" id="passenger" required></select>
+        </label>
+        <label>Train
+          <select name="train_id" id="train" required></select>
+        </label>
+        <label>Travel date
+          <input name="travel_date" id="travelDate" type="date" required>
+        </label>
+        <label>Number of seats
+          <input name="seats_booked" id="seats" type="number" min="1" value="1" required>
+        </label>
+
+        <div class="preview" id="preview">Select a train to see the fare.</div>
+
+        <button type="submit" class="btn primary">Confirm booking</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/book.js"></script>
+</body>
+</html>
